@@ -5,6 +5,7 @@ Ten katalog jest gotowym artefaktem statycznym do deployu na Cloudflare Pages.
 ## Zawartość
 
 - `index.html`
+- `dokumenty/index.html`
 - `assets/css/styles.css`
 - `assets/images/*`
 

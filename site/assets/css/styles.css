@@ -83,6 +83,34 @@ body {
   font-size: clamp(1.15rem, 2.05vw, 2.2rem);
 }
 
+.documents-section {
+  width: 100%;
+  margin-top: 28px;
+  padding: 0 26px;
+}
+
+.documents-section h1 {
+  margin: 0 0 14px;
+  text-align: left;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+}
+
+.documents-section ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.documents-section li {
+  margin: 0 0 6px;
+  line-height: 1.25;
+  font-size: clamp(1.15rem, 2.05vw, 2.2rem);
+}
+
+.documents-section a {
+  color: inherit;
+}
+
 .contact-card__company {
   margin-top: auto;
   margin-bottom: 6px;
@@ -120,6 +148,18 @@ body {
   }
 
   .contact-card__contact a {
+    font-size: 1.9rem;
+  }
+
+  .documents-section {
+    padding: 0 10px;
+  }
+
+  .documents-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .documents-section li {
     font-size: 1.9rem;
   }
 
