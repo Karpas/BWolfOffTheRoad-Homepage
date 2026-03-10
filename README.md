@@ -7,7 +7,6 @@ Statyczna strona kontaktowa BWolf Off The Road, przygotowana pod darmowy hosting
 - `site/index.html` - główny dokument strony
 - `site/assets/css/styles.css` - style
 - `site/assets/images/` - obrazy i logo
-- `old-dump/` - oryginalny eksport z Canvy (źródło do porównań)
 
 ## Lokalny podgląd
 
