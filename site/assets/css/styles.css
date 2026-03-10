@@ -1,0 +1,133 @@
+:root {
+  --text-color: #0d0d0d;
+  --card-background: rgba(242, 246, 252, 0.35);
+  --card-border: rgba(255, 255, 255, 0.7);
+  --card-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--text-color);
+  font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
+    url("../images/hero.jpg") center / cover no-repeat;
+}
+
+.contact-card {
+  position: relative;
+  z-index: 0;
+  width: min(720px, 88vw);
+  min-height: calc(100vh - 48px);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  border-radius: 34px;
+  box-shadow: var(--card-shadow);
+  background: var(--card-background);
+  padding: 38px 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scale(1.04);
+  filter: blur(2px) saturate(0.8);
+  background: linear-gradient(
+      180deg,
+      rgba(226, 236, 247, 0.74) 0%,
+      rgba(226, 236, 247, 0.48) 36%,
+      rgba(171, 148, 127, 0.38) 100%
+    ),
+    url("../images/card-bg.jpg") center / cover no-repeat;
+}
+
+.contact-card__logo {
+  width: min(460px, 72%);
+  margin-top: 6px;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.2));
+}
+
+.contact-card__contact {
+  margin-top: 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-card__contact h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+}
+
+.contact-card__contact a {
+  color: inherit;
+  font-size: clamp(1.15rem, 2.05vw, 2.2rem);
+}
+
+.contact-card__company {
+  margin-top: auto;
+  margin-bottom: 6px;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.2vw, 2.2rem);
+}
+
+.contact-card__company p {
+  margin: 0 0 6px;
+}
+
+.contact-card__copyright {
+  margin: 8px 0 0;
+  text-align: center;
+  opacity: 0.95;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+}
+
+@media (max-width: 520px) {
+  .landing-page {
+    padding: 14px;
+  }
+
+  .contact-card {
+    width: min(700px, 95vw);
+    min-height: calc(100vh - 28px);
+    border-radius: 24px;
+    padding: 22px 18px 18px;
+  }
+
+  .contact-card__contact h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-card__contact a {
+    font-size: 1.9rem;
+  }
+
+  .contact-card__company {
+    font-size: 1.75rem;
+  }
+
+  .contact-card__copyright {
+    font-size: 1.3rem;
+  }
+}
