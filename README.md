@@ -1,37 +1,48 @@
 # BWolf Homepage
 
-Statyczna strona BWolf Off The Road, przygotowana pod darmowy hosting na Cloudflare Pages.
+Static website for BWolf Off The Road, hosted on GitHub Pages.
 
-## Struktura repo
+## Repository structure
 
-- `site/index.html` - strona główna
-- `site/dokumenty/index.html` - podstrona dokumentów (`/dokumenty`)
-- `site/assets/css/styles.css` - style
-- `site/assets/images/` - obrazy i logo
+- `site/index.html` - home page
+- `site/dokumenty/index.html` - documents subpage (`/dokumenty`)
+- `site/assets/css/styles.css` - styles
+- `site/assets/images/` - images and logo
 
-## Lokalny podgląd
+## Local preview
 
 ```bash
 cd site
 python3 -m http.server 4173
 ```
 
-Otwórz:
+Open:
 - [http://localhost:4173](http://localhost:4173)
 - [http://localhost:4173/dokumenty/](http://localhost:4173/dokumenty/)
 
-## Deploy na Cloudflare Pages
+## Deploy to GitHub Pages
 
-1. Wypchnij repo na GitHub/GitLab.
-2. W Cloudflare wybierz: `Workers & Pages` -> `Create application` -> `Pages` -> `Connect to Git`.
-3. Ustaw:
-   - `Framework preset`: `None`
-   - `Build command`: (puste)
-   - `Build output directory`: `site`
-4. Kliknij `Save and Deploy`.
+1. Push the repository to GitHub.
+2. Go to the repository `Settings` -> `Pages`.
+3. Under `Build and deployment` set:
+   - `Source`: `Deploy from a branch`
+   - `Branch`: `main` (or `master`), folder: `/ (root)`
+4. Click `Save`.
 
-Możesz też użyć opcji `Direct Upload` i wskazać katalog `site`.
+> **Note:** GitHub Pages only supports the root (`/`) or `/docs` directory as the source.
+> If the site files are in the `site/` folder, you need to either use GitHub Actions
+> or rename `site/` to `docs/`.
 
-## Licencja
+### Option 1: `docs/` folder
 
-MIT - zobacz plik `LICENSE`.
+1. Rename the `site` folder to `docs`.
+2. Push the changes to GitHub.
+3. In `Settings` -> `Pages` set branch `main`, folder `/docs`.
+
+### Option 2: GitHub Actions
+
+Add a `.github/workflows/deploy.yml` file with a workflow that copies the contents of `site/` to the `gh-pages` branch.
+
+## License
+
+MIT — see the `LICENSE` file.
